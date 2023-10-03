@@ -1,0 +1,50 @@
+---
+title: 'Environment'
+description: 'Each unique deployment stack of the Application'
+icon: 'text-size'
+---
+
+## What are Environments
+
+It's common practice for engineering teams to have multiple environments, such as development, staging, and production. The idea behind having multiple environments is to be able to test changes in isolation and catch issues before they hit production. So for example, a developer may make some changes locally, test them, and push them for testing in CI/CD. Following that, the change will be moved to a shared development environment where it would be tested by the wider team. Changes that pass this level of testing will move to staging, where they are deployed to an environment that's as similar as possible to the production environment, and after all testing pass there they would be deployed to production and rolled out to users.
+
+Not all teams go through all of the steps above (and some go through more), but the idea remains the same: you want to isolate your production environment, where real user data lies, from your non-production environments that may contain bugs and regressions.
+
+ALso, a production code base of an Application could be deployed in different geographies based on their deployment strategy. For example, an Application could be deployed in US, EU, AU regions and as such these deployments are independent of each other. In such scenarios, these independent deployments are also considered as different environments. 
+
+In summary, every unique deployment of an Application should be treated as a different Environment in ScaleKit world.
+
+## Managing Environments
+
+You can create as many environments as needed based on your Application deployment workflow and tag them as either `development` or `production`.
+
+Typically, a `production` tagged environment will go through higher security checks and requirements from ScaleKit point of view and a `development` tagged environment could have higher restrictions on the volume of data or transactions. This segregation maps to your real world scale & security demands of your different deployments too.
+
+You can either create a completely new environment or choose to clone an existing environment. Cloning an existing environment helps you copy the environment settings over to the new environment thus helping you to setup the new environment faster. 
+
+## Data Isolation
+
+Each `Environment` is completely isolated from other environments (even of the same application) and have completely separate data, configuration and developer integration settings. For data residency reasons, you can even choose the data center in which you would like us to host your environment data & settings so that you are compliant to your customer's data residency requirements.
+
+### Attributes
+
+<ResponseField name="id" type="string">
+  This is the unique ID that represents your Environment. E.g., `env_123456789`
+</ResponseField>
+
+<ResponseField name="app_id" type="string">
+  This is the unique ID of the application that this environment belonds to. E.g., `app_123456789`
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  Your Environment Name. We will use this in all the UI fields and labels to denote to your Environment E.g., `Slack Local Dev`
+</ResponseField>
+
+<ResponseField name="isProduction" type="boolean">
+  Determines whether this is a production environment or not E.g., `false`
+</ResponseField>
+
+<ResponseField name="region" type="String">
+  Data Center in which this environment's data is hosted in E.g., `us-east-1`
+</ResponseField>
+

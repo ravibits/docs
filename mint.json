@@ -57,8 +57,8 @@
       "pages": ["introduction", "quickstart", "development"]
     },
     {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "group": "ScaleKit Concepts",
+      "pages": ["scalekit/overview", "scalekit/workspace", "scalekit/application", "scalekit/environment", "scalekit/team-member"]
     },
     {
       "group": "API Documentation",

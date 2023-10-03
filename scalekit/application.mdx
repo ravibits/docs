@@ -1,0 +1,26 @@
+---
+title: 'Application'
+icon: 'image'
+---
+
+## Definition
+Application refers to the web application or mobile application that needs to be Enterprise Ready. Example: Slack
+
+You could be building one or more applications that you are building and selling. For each of the applications that you want to make them enterprise ready, you are required to create an `Application` entity in your `Workspace`.
+
+## Relationship with Workspace
+Any Application is created and managed within the context of a Workspace and as such can belong to only one Workspace. But, a Workspace can have one or more Applications. 
+
+### Attributes
+
+<ResponseField name="id" type="string">
+  This is the unique ID that represents your Application. E.g., `app_123456789`
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  Your designated Application Name. We will use this in all the UI fields and labels to denote to your Application E.g., `Slack`
+</ResponseField>
+
+<ResponseField name="workspace_id" type="string">
+  The unique ID of the workspace to which this application belongs to. E.g., `wsp_123456789`
+</ResponseField>
